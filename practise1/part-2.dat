@@ -1,0 +1,77 @@
+data;
+
+set AVION := avion1 avion2 avion3 avion4 avion5;
+
+param Asientos :=
+avion1		90		
+avion2		120
+avion3		200
+avion4		150
+avion5		190;
+
+param Capacidad :=
+avion1		1700		
+avion2		2700
+avion3		1300
+avion4		1700
+avion5		2000;
+
+/* en minutos */
+param Hora_programada_avion :=
+avion1		550		
+avion2		535
+avion3		580
+avion4		595
+avion5		610;
+
+/* en minutos */
+param Hora_limite_avion :=
+avion1		615		
+avion2		570
+avion3		600
+avion4		615
+avion5		630;
+
+/* referido al coste por minuto de retraso del avion */
+param Coste :=
+avion1		100		
+avion2		200
+avion3		150
+avion4		250
+avion5		200;
+
+set TARIFA := estandar leisure_plus business_plus;
+
+param Equipaje_permitido :=
+estandar		1		
+leisure_plus	20
+business_plus	40;
+
+param Precio :=
+estandar		19		
+leisure_plus	49
+business_plus	69;
+
+set PISTAS := pista1 pista2 pista3 pista4;
+param numero_slots := 6;
+
+
+/* Donde la hora de inicio de los slots es: 1 = 9:00 , 2 = 9:15 , 3 = 9:30 , 4 = 9:45 , 5 = 10:00 , 6 = 10:15 */
+/* en minutos */
+param Hora_inicio_slot :=
+1		540		
+2		555
+3		570
+4		585
+5		600
+6		615;
+
+/* 1 = preasignado , 0 = no asignado */ 
+param Slot_preasignado : 1 2 3 4 5 6 :=
+pista1 		1 1 1 1 0 0				
+pista2 		1 1 0 0 1 1	
+pista3 		0 0 0 1 1 0	
+pista4 		0 1 1 1 0 0;
+
+
+end;
